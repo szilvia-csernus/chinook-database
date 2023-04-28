@@ -1,39 +1,79 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Chinook Database Project Summary
 
-Welcome,
+## Overview
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The Chinook Database project demonstrates various ways to interact with a local PostgreSQL database named "chinook." The database contains three tables: `Artist`, `Album`, and `Track`. The project includes implementations for querying, creating, reading, updating, and deleting data using Python libraries such as SQLAlchemy and psycopg2.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **March 3rd, 2023**
+## Tech Stack
 
-## Codeanywhere Reminders
+- **Programming Language**: Python
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+- **Database**: PostgreSQL
 
-`python3 -m http.server`
+- **Libraries**:
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+  - SQLAlchemy
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+  - psycopg2
 
-`http_server`
+## Main Features
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- **Database Interaction**:
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+  - Querying data using SQLAlchemy ORM and psycopg2.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - CRUD operations on the `Programmer` table using SQLAlchemy.
 
-To log into the Heroku toolbelt CLI:
+- **Queries**:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - Simple SELECT statements to retrieve data from the `Artist`, `Album`, and `Track` tables.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - Complex queries combining multiple tables.
 
----
+## Architecture
 
-Happy coding!
+- **ORM**: SQLAlchemy is used to define classes for tables and perform ORM-based queries.
+
+- **Direct SQL**: psycopg2 is used for direct SQL queries.
+
+- **Session Management**: SQLAlchemy's `sessionmaker` is used to manage database sessions.
+
+## Data and Storage
+
+- **Database**: PostgreSQL
+
+- **Tables**:
+
+  - `Artist`: Columns include `ArtistId` and `Name`.
+
+  - `Album`: Columns include `AlbumId`, `Title`, `ArtistId`, and `UnitPrice`.
+
+  - `Track`: Columns include `TrackId`, `Name`, `AlbumId`, `MediaTypeId`, `GenreId`, `Composer`, `Milliseconds`, `Bytes`, and `UnitPrice`.
+
+## APIs
+
+- **SQLAlchemy**: Used for ORM and query construction.
+
+- **psycopg2**: Used for direct SQL execution.
+
+## Security
+
+- **Database Connection**: Connections are managed securely using psycopg2 and SQLAlchemy.
+
+## Testing
+
+- **Manual Testing**: Queries and CRUD operations are manually tested by running the scripts.
+
+## Deployment
+
+- **Local Deployment**: The project is designed to run locally with a PostgreSQL database.
+
+- **Prerequisites**: Requires Python, PostgreSQL, and the necessary libraries (SQLAlchemy, psycopg2).
+
+## Project Scale
+
+- **Target Audience**: Developers learning database interaction with Python.
+
+- **Scalability**: Suitable for small-scale database applications.
+
+- **Cost Efficiency**: Minimal infrastructure requirements; runs on a local PostgreSQL instance.
